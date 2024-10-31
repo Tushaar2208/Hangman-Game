@@ -1,0 +1,237 @@
+/* Reset default margin, padding, and set a global font */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Background for the entire page */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to right, #36454F, #D3D3D3);
+    color: #333;
+}
+
+/* Container for the game */
+.game-container {
+    background: linear-gradient(145deg, #ffffff, #e6e6e6);
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 650px; /* Increased width to 750px */
+    max-width: 90vw;
+    animation: fadeIn 1.5s ease-in-out;
+    border: 1px solid #ccc;
+    position: relative;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .game-container {
+        width: 90%; /* Ensure it takes up most of the screen on small devices */
+        padding: 30px;
+    }
+    
+    h1 {
+        font-size: 24px;
+    }
+
+    #guess-input {
+        width: 60px;
+        font-size: 16px;
+    }
+
+    #guess-button {
+        font-size: 16px;
+        padding: 10px 15px;
+    }
+
+    #word-display {
+        font-size: 22px;
+    }
+}
+
+
+/* Title styling */
+h1 {
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #000000;
+    font-weight: bold;
+}
+
+/* Guessed word display */
+#word-display {
+    font-size: 28px;
+    letter-spacing: 8px;
+    color: #4CAF50;
+    margin-bottom: 20px;
+}
+
+/* Feedback message styling */
+#message {
+    color: #e74c3c;
+    font-weight: bold;
+    margin: 20px 0;
+    font-size: 18px;
+    transition: color 0.5s ease;
+}
+
+/* Guesses remaining display */
+#guesses-left {
+    font-size: 20px;
+    color: #FF5722;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+/* Input styling */
+#guess-input {
+    padding: 12px;
+    font-size: 20px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    width: 80px;
+    text-align: center;
+    margin-right: 10px;
+    transition: border-color 0.3s, background-color 0.3s;
+}
+
+#guess-input:focus {
+    border-color: #4CAF50;
+    background-color: #f0f8ff;
+    outline: none;
+}
+
+/* Button styling with effects */
+#guess-button {
+    padding: 12px 18px;
+    font-size: 18px;
+    color: #ffffff;
+    background-color: #3498db;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+#guess-button:hover {
+    background-color: #2980b9;
+    transform: translateY(-3px);
+}
+
+/* Display of letters guessed */
+#letters-guessed {
+    color: #666;
+    font-size: 18px;
+    margin-top: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Animation for fade-in effect */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .game-container {
+        width: 90%;
+        padding: 30px;
+    }
+    
+    h1 {
+        font-size: 24px;
+    }
+
+    #guess-input {
+        width: 60px;
+        font-size: 16px;
+    }
+
+    #guess-button {
+        font-size: 16px;
+        padding: 10px 15px;
+    }
+
+    #word-display {
+        font-size: 22px;
+    }
+}
+.play-again-container {
+    display: flex;
+    justify-content: center; /* Center the button */
+    margin-top: 20px; /* Space above the Play Again button */
+}
+
+#play-again-button {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 18px; /* Match padding with the guess button */
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s;
+}
+
+#play-again-button:hover {
+    background-color: #45a049; /* Darker green */
+}
+
+.how-to-play-container {
+    margin-top: 20px; /* Space above the link */
+}
+
+.back-arrow-container {
+    display: flex;
+    justify-content: center; /* Center the button */
+    margin-top: 30px; /* Space above the button */
+}
+
+.back-arrow-container {
+    display: flex;
+    justify-content: center; /* Center the button */
+    margin-top: 30px; /* Space above the button */
+}
+
+.back-arrow-container {
+    position: fixed; /* Fix position to the viewport */
+    bottom: 20px; /* Distance from the bottom */
+    left: 20px; /* Distance from the left */
+}
+
+#back-arrow-button {
+    width: 50px; /* Set a width */
+    height: 50px; /* Set a height */
+    border-radius: 50%; /* Make it circular */
+    font-size: 24px; /* Font size */
+    color: black; /* Text color */
+    background: white; /* White background */
+    border: 2px solid black; /* Black border */
+    cursor: pointer; /* Pointer cursor */
+    transition: background 0.3s; /* Transition effect */
+    display: flex; /* Center text */
+    justify-content: center; /* Center text horizontally */
+    align-items: center; /* Center text vertically */
+}
+
+#back-arrow-button:hover {
+    background: #f0f0f0; /* Light gray on hover */
+}

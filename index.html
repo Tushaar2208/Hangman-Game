@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hangman Game</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Include your existing styles here */
+        .back-arrow-container {
+            position: fixed; /* Fix position to the viewport */
+            bottom: 20px; /* Distance from the bottom */
+            left: 20px; /* Distance from the left */
+        }
+
+        #back-arrow-button {
+            width: 50px; /* Set a width */
+            height: 50px; /* Set a height */
+            border-radius: 50%; /* Make it circular */
+            font-size: 24px; /* Font size */
+            color: black; /* Text color */
+            background: white; /* White background */
+            border: 2px solid black; /* Black border */
+            cursor: pointer; /* Pointer cursor */
+            transition: background 0.3s; /* Transition effect */
+            display: flex; /* Center text */
+            justify-content: center; /* Center text horizontally */
+            align-items: center; /* Center text vertically */
+        }
+
+        #back-arrow-button:hover {
+            background: #f0f0f0; /* Light gray on hover */
+        }
+
+        /* Styles for the canvas */
+        #hangman-canvas {
+            border: 1px solid black;
+            margin-top: 20px;
+            background: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <h1>Hangman</h1>
+        <canvas id="hangman-canvas" width="200" height="200"></canvas>
+        <p id="word-display">_ _ _ _</p>
+        <p id="message"></p>
+        <p>Guesses left: <span id="guesses-left">6</span></p>
+        <input type="text" id="guess-input" maxlength="1" placeholder="Enter a letter">
+        <button id="guess-button">Guess</button>
+        
+        <!-- Centered Play Again Button -->
+        <div class="play-again-container">
+            <button id="play-again-button" style="display: none;">Play Again</button>
+        </div>
+        <br>
+        <br>
+
+        <p>Letters guessed: <span id="letters-guessed"></span></p>
+    </div>
+
+    <!-- Separate container for Back Arrow button -->
+    <div class="back-arrow-container">
+        <button id="back-arrow-button" onclick="window.location.href='how-to-play.html'">&#8592;</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

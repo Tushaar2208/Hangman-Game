@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Play Hangman</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Additional styles for the how-to-play section */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* Allow the content to scroll */
+            background: linear-gradient(to right, #36454F, #D3D3D3); /* Updated gradient */
+            color: #333; /* Adjusted text color for better contrast */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow-y: auto; /* Allow vertical scrolling */
+            min-height: 100vh; /* Ensure the body takes at least full viewport height */
+        }
+
+        .how-to-play {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;  
+            border-radius: 15px; 
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); 
+            text-align: left;
+            width: 95%; /* Increased to make it wider */
+            max-width: 900px; /* Increased max-width for the box */
+            margin: 20px; /* Add some margin for spacing */
+        }
+
+        .how-to-play h2 {
+            margin-bottom: 15px; 
+            color: #36454F; /* Changed heading color for contrast */
+            font-size: 28px; 
+            text-align: center; 
+        }
+
+        .how-to-play p,
+        .how-to-play li {
+            font-size: 18px; 
+            line-height: 1.5; 
+            margin-bottom: 10px; 
+            color: #36454F; /* Updated text color to match theme */
+        }
+
+        .how-to-play pre {
+            background: #f7f7f7;
+            padding: 15px; 
+            border: 1px solid #ddd;
+            overflow-x: auto;
+            white-space: pre-wrap; 
+            border-radius: 5px; 
+        }
+
+        .how-to-play ul {
+            padding-left: 20px; 
+        }
+
+        .how-to-play button {
+            background: linear-gradient(to right, #36454F, #D3D3D3); /* Gradient matching the background */
+            color: white;
+            border: none;
+            border-radius: 25px; /* Rounded corners */
+            padding: 22.5px 45px; /* Increased padding for 1.5x size */
+            cursor: pointer;
+            font-size: 30px; /* Increased font size to 1.5x */
+            transition: all 0.3s ease;
+            display: block; 
+            font-weight: bold;
+            margin: 30px auto; /* Center the button and add space from above */
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .how-to-play button:hover {
+            background: linear-gradient(to right, #D3D3D3, #36454F); /* Inverse gradient on hover */
+            transform: scale(1.05); /* Slightly enlarge on hover */
+        }
+
+        .how-to-play button:active {
+            transform: scale(0.95); /* Slightly shrink on click */
+            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="how-to-play">
+        <h2>How to Play Hangman</h2>
+        <p>Hangman is a classic word-guessing game where players attempt to guess a hidden word by suggesting letters one at a time. The game progresses with each incorrect guess leading to a visual representation of a hangman, and the objective is to guess the word before the hangman is fully drawn.</p>
+        <pre>
+  ------
+  |    |
+  |    O
+  |   /|\
+  |   / \
+  |
+=========
+        </pre>
+        <h3>Instructions:</h3>
+        <ul>
+            <li>Start the Game: Click the "Start Game" button to begin playing.</li>
+            <li>Guess a Letter: In the main game, you will see a series of underscores representing the letters in the hidden word. Below the underscores, enter a letter in the input box and press "Enter" or click the "Guess" button.</li>
+            <li>Feedback:
+                <ul>
+                    <li>If your guess is correct, the corresponding letters in the word will be revealed.</li>
+                    <li>If your guess is incorrect, the number of remaining guesses will decrease, and a part of the hangman figure will be drawn.</li>
+                </ul>
+            </li>
+            <li>Winning the Game: The game continues until either:
+                <ul>
+                    <li>You correctly guess all the letters in the word, winning the game.</li>
+                    <li>You run out of guesses (i.e., the hangman is fully drawn), leading to a game over.</li>
+                </ul>
+            </li>
+            <li>Letters Guessed: You will also see a list of letters you have already guessed, helping you avoid repeating guesses.</li>
+            <li>Scoring: Your score can be based on the number of guesses left when you correctly guess the word. A higher score is achieved by guessing the word with more remaining guesses.</li>
+        </ul>
+        <br>
+        <br>
+
+        <form id="start-form">
+            <button type="submit">Start Game</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("start-form").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent the default form submission
+            // Redirect to the main game page (index.html)
+            window.location.href = "index.html";
+        });
+    </script>
+</body>
+</html>
